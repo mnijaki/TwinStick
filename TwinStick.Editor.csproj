@@ -238,9 +238,6 @@
     <Reference Include="Managed/Unity.Locator">
       <HintPath>D:\Programy\Unity\2018.2.0f2\Editor\Data\Managed/Unity.Locator.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>Library/ScriptAssemblies/Assembly-CSharp.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Programy/Unity/2018.2.0f2/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
     </Reference>
@@ -358,6 +355,10 @@
       <Project>{C04B850E-5AAE-7FF9-7C54-770DB6171825}</Project>
       <Name>TwinStick.Plugins</Name>
     </ProjectReference>
+    <ProjectReference Include="TwinStick.csproj">
+      <Project>{84C24DFE-D2E7-7381-CD8E-78797931C7B0}</Project>
+      <Name>TwinStick</Name>
+    </ProjectReference>
     <ProjectReference Include="UnityEditor.StandardEvents.csproj">
       <Project>{6800202F-4402-D405-F8CB-03DC7BD78B92}</Project>
       <Name>UnityEditor.StandardEvents</Name>
@@ -379,8 +380,8 @@
     <Compile Include="Assets\Editor\CrossPlatformInput\CrossPlatformInputInitialize.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
-    <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+    <None Include="Assets\Ball\RollerBallGuidelines.txt" />
+    <None Include="Assets\Standard Assets\Cameras\CameraGuidelines.txt" />
     <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

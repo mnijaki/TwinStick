@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro", "Unity.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwinStick.Plugins", "TwinStick.Plugins.csproj", "{C04B850E-5AAE-7FF9-7C54-770DB6171825}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwinStick", "TwinStick.csproj", "{84C24DFE-D2E7-7381-CD8E-78797931C7B0}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwinStick.Editor", "TwinStick.Editor.csproj", "{C5E96734-2956-04B0-9AB3-CD06C12F4B64}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.PackageManagerUI.Editor", "Unity.PackageManagerUI.Editor.csproj", "{6877705C-FBD9-0C4F-5AFB-6FB431E5D39D}"
@@ -27,6 +29,10 @@ Global
 		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84C24DFE-D2E7-7381-CD8E-78797931C7B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84C24DFE-D2E7-7381-CD8E-78797931C7B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84C24DFE-D2E7-7381-CD8E-78797931C7B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84C24DFE-D2E7-7381-CD8E-78797931C7B0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C5E96734-2956-04B0-9AB3-CD06C12F4B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C5E96734-2956-04B0-9AB3-CD06C12F4B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5E96734-2956-04B0-9AB3-CD06C12F4B64}.Release|Any CPU.ActiveCfg = Release|Any CPU
