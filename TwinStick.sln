@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.TextMeshPro", "Unity.TextMeshPro.csproj", "{07A21C90-D344-AE1A-8456-9910C203B41A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwinStick.Plugins", "TwinStick.Plugins.csproj", "{C04B850E-5AAE-7FF9-7C54-770DB6171825}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwinStick", "TwinStick.csproj", "{84C24DFE-D2E7-7381-CD8E-78797931C7B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwinStick.Plugins", "TwinStick.Plugins.csproj", "{C04B850E-5AAE-7FF9-7C54-770DB6171825}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwinStick.Editor", "TwinStick.Editor.csproj", "{C5E96734-2956-04B0-9AB3-CD06C12F4B64}"
 EndProject
@@ -25,14 +25,14 @@ Global
 		{07A21C90-D344-AE1A-8456-9910C203B41A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07A21C90-D344-AE1A-8456-9910C203B41A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07A21C90-D344-AE1A-8456-9910C203B41A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Release|Any CPU.Build.0 = Release|Any CPU
 		{84C24DFE-D2E7-7381-CD8E-78797931C7B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{84C24DFE-D2E7-7381-CD8E-78797931C7B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84C24DFE-D2E7-7381-CD8E-78797931C7B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84C24DFE-D2E7-7381-CD8E-78797931C7B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04B850E-5AAE-7FF9-7C54-770DB6171825}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C5E96734-2956-04B0-9AB3-CD06C12F4B64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C5E96734-2956-04B0-9AB3-CD06C12F4B64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5E96734-2956-04B0-9AB3-CD06C12F4B64}.Release|Any CPU.ActiveCfg = Release|Any CPU

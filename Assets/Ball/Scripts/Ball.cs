@@ -17,13 +17,13 @@ namespace UnityStandardAssets.Vehicles.Ball
     // Unity is automaticly ignoring 'm_' prefix in editor (it will display e.g 'MovePower' not 'm_MovePower').
     //
     // The force added to the ball to move it.
-    [SerializeField] private float m_MovePower = 5;
-    // Whether or not to use torque to move the ball.
-    [SerializeField] private bool m_UseTorque = true;
+    [SerializeField] private float move_power = 5;
+    // Flag whether or not to use torque to move the ball.
+    [SerializeField] private bool is_using_torque = true;
     // The maximum velocity the ball can rotate at.
-    [SerializeField] private float m_MaxAngularVelocity = 25;
+    [SerializeField] private float max_angular_velocity = 25;
     // The force added to the ball when it jumps.
-    [SerializeField] private float m_JumpPower = 2;
+    [SerializeField] private float jump_power = 2;
 
     #endregion
 
@@ -34,9 +34,9 @@ namespace UnityStandardAssets.Vehicles.Ball
     #region
 
     // The length of the ray to check if the ball is grounded.
-    private const float k_GroundRayLength = 1f;
+    private const float ground_ray_length = 1f;
     // Ball rigidbody.
-    private Rigidbody m_Rigidbody;
+    private Rigidbody rigid_body;
 
     #endregion
 
@@ -47,10 +47,10 @@ namespace UnityStandardAssets.Vehicles.Ball
     #region
 
     // Method that handles moving and jumping. It is called by 'BallUserControl' in response to input.
-    public void Move(Vector3 moveDirection,bool jump)
+    public void Move(Vector3 move_dir, bool is_jumping)
     {
       // If using torque to rotate the ball.
-      if(m_UseTorque)
+      if(this.is_using_torque)
       {
         // 'AddTorque' - adds spin force to a rigid body.
         // In this case, the amount of forward motion becomes the amount of spin force around.
@@ -75,7 +75,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         // perspective of the camera.
         //
         // Add torque(spin force) around the axis defined by the move direction.
-        m_Rigidbody.AddTorque(new Vector3(moveDirection.z,0,-moveDirection.x) * m_MovePower);
+        this.rigid_body.AddTorque(new Vector3(move_dir.z,0,-move_dir.x) * this.move_power);
         //m_Rigidbody.AddTorque(new Vector3(moveDirection.x,0,moveDirection.z) * m_MovePower);
 
       }
@@ -86,11 +86,10 @@ namespace UnityStandardAssets.Vehicles.Ball
         // Just add ordinary force causing acceleration in the move direction.
         //
         // Add force in the move direction.
-        m_Rigidbody.AddForce(moveDirection*m_MovePower);
+        this.rigid_body.AddForce(move_dir*this.move_power);
       }
-
       // If on the ground and jump is pressed (so you cannot jump if ball is in the air).
-      if((Physics.Raycast(transform.position,-Vector3.up,k_GroundRayLength)) && (jump))
+      if((Physics.Raycast(this.transform.position,-Vector3.up,ground_ray_length)) && (is_jumping))
       {
         // I'm not an expert but I guess 'ForceMode.Impulse' is a short cut for applying the force in an instant
         // where you would usually have to calculate the force based on the frame update duration 
@@ -98,7 +97,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         // Using regular apply force might vary with frame rate, but that's my naive guess.
         //
         // Add force in upwards. Impulse means the force is added once, as a shot, instead of continuously.
-        m_Rigidbody.AddForce(Vector3.up*m_JumpPower,ForceMode.Impulse);
+        this.rigid_body.AddForce(Vector3.up*this.jump_power,ForceMode.Impulse);
       }
     }
 
@@ -114,9 +113,9 @@ namespace UnityStandardAssets.Vehicles.Ball
     private void Start()
     {
       // Get rigidbody.
-      m_Rigidbody = GetComponent<Rigidbody>();
+      this.rigid_body = GetComponent<Rigidbody>();
       // Set the maximum angular velocity (maximum spin rate of the ball). 
-      GetComponent<Rigidbody>().maxAngularVelocity = m_MaxAngularVelocity;
+      GetComponent<Rigidbody>().maxAngularVelocity = this.max_angular_velocity;
     } // End of Start
 
     #endregion
