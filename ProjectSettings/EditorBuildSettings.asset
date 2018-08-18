@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/GameWithNormalCamera.unity
+    guid: 06362ed52418df14a8bb6b765c01630a
   m_configObjects: {}

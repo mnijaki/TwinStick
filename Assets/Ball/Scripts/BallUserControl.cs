@@ -30,6 +30,8 @@ namespace UnityStandardAssets.Vehicles.Ball
 
     // Reference to the ball controller.
     private Ball ball;
+    // Game manager.
+    private GameManager game_manager;
     // World - relative desired move direction, calculated from the 'main_camera_direction' and user input.
     // The purpose of having the camera is to do motion from the frame reference of the camera, 
     // not that of the world space.
@@ -55,7 +57,7 @@ namespace UnityStandardAssets.Vehicles.Ball
     private void Awake()
     {
       // Get ball.
-      this.ball = GetComponent<Ball>();
+      this.ball = GetComponent<Ball>();      
       // If there is camera tagged as 'MainCamera'.
       if(Camera.main != null)
       {
@@ -71,9 +73,25 @@ namespace UnityStandardAssets.Vehicles.Ball
       }
     } // End of Awake
 
+    // Initialization.
+    private void Start()
+    {
+      // Get game manager.
+      this.game_manager = GameObject.FindObjectOfType<GameManager>();
+    } // End of Start
+
     // Update (called once per frame)
     private void Update()
     {
+      // If replay mode then exit from function.
+      if(!this.game_manager.is_recording)
+      {
+        return;
+      }
+      // Debug Horizontal and Vertical values.
+      DebugAxis();
+      // Debug RHorizontal and RVertical values.
+      DebugRAxis();
       // Get the axis and jump input ('CrossPlatformInputManager' will provide correct input handling
       // for multiple platforms like PC, mobile, Xbox ect).
       float h = CrossPlatformInputManager.GetAxis("Horizontal");
@@ -102,20 +120,27 @@ namespace UnityStandardAssets.Vehicles.Ball
     // gameplay in code). 
     private void FixedUpdate()
     {
+      // If replay mode then exit from function.
+      if(!this.game_manager.is_recording)
+      {
+        return;
+      }
       // Call the 'Move' function of the ball controller.
       this.ball.Move(this.move,this.jump);
       // Change 'jump' flag.
       this.jump = false;
     } // End of FixedUpdate
 
-    #endregion
-
-
     // Draw gizmos of game object, even if game object is not selected.
     private void OnDrawGizmos()
     {
       // If not debug mode then exit from function.
       if(!this.is_debug_mode)
+      {
+        return;
+      }
+      // If no main camera then exit from function.
+      if(this.main_camera_trans==null)
       {
         return;
       }
@@ -133,6 +158,34 @@ namespace UnityStandardAssets.Vehicles.Ball
       Vector3 vec = Vector3.Scale(this.main_camera_trans.forward,new Vector3(3,0,3)).normalized;
       Debug.DrawRay(Vector3.zero,new Vector3(vec.z,0,-vec.x),Color.yellow);
     } // End of OnDrawGizmos
+
+    // Debug Horizontal and Vertical values.
+    private void DebugAxis()
+    {
+      // If not debug mode then exit from function.
+      if(!this.is_debug_mode)
+      {
+        return;
+      }
+      // Debug axis.
+      Debug.Log("Horizontal="+CrossPlatformInputManager.GetAxis("Horizontal"));
+      Debug.Log("Vertical="+CrossPlatformInputManager.GetAxis("Vertical"));
+    } // End of DebugAxis
+
+    // Debug RHorizontal and RVertical values.
+    private void DebugRAxis()
+    {
+      // If not debug mode then exit from function.
+      if(!this.is_debug_mode)
+      {
+        return;
+      }
+      // Debug axis.
+      Debug.Log("RHorizontal="+CrossPlatformInputManager.GetAxis("RHorizontal"));
+      Debug.Log("RVertical="+CrossPlatformInputManager.GetAxis("RVertical"));
+    } // End of DebugRAxis
+
+    #endregion
 
   } // End of BallUserControl
 } // End of namespace

@@ -306,7 +306,10 @@
   <ItemGroup>
     <Compile Include="Assets\Ball\Scripts\Ball.cs" />
     <Compile Include="Assets\Ball\Scripts\BallUserControl.cs" />
+    <Compile Include="Assets\Cameras\Scripts\CameraPan.cs" />
+    <Compile Include="Assets\Cameras\Scripts\CameraSelfieStick.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\ReplayManager.cs" />
   </ItemGroup>
   <ItemGroup>

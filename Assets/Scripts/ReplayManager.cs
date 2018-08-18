@@ -47,8 +47,9 @@ public class ReplayManager:MonoBehaviour
     }
   } // End of Start
 
-  // Update (called once per frame).
-  private void Update()
+  // LateUpdate is called after all Update functions have been called (thx to that replay in camera pan mode
+  // is smooth without jitters).
+  private void LateUpdate()
   {
     // If record mode.
     if(this.game_manager.is_recording)
@@ -60,7 +61,7 @@ public class ReplayManager:MonoBehaviour
     {
       PlayBack();
     }
-  } // End of Update
+  } // End of LateUpdate
 
   // Record frames.
   private void Record()
